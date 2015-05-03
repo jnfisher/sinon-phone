@@ -19,3 +19,16 @@ test('it renders', function(assert) {
   this.render();
   assert.equal(component._state, 'inDOM');
 });
+
+test('it sends its id when the button is pressed', function(assert) {
+  var component = this.subject();
+  var buttonId = '7';
+  component.set('id', buttonId);
+
+  component.sendAction = sinon.spy();
+
+  component.send('buttonPressed');
+
+  assert.ok(component.sendAction.calledOnce);
+  assert.ok(component.sendAction.calledWith('sendId', buttonId));
+});

@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
 
   actions: {
-    sendId: function() {
+    buttonPressed: function() {
       this.sendAction('sendId', this.get('id'));
     }
   }

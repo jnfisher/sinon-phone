@@ -15,14 +15,14 @@ export default Ember.Controller.extend({
 
   dialNumber: function() {
     // Dial a number
-    clearNumber();
+    this.clearNumber();
   },
 
   actions: {
     receiveButtonPress: function(buttonId) {
       this.set('currentNumber', this.get('currentNumber') + buttonId);
 
-      if (this.get('currentNumber').length == 10) {
+      if (this.get('currentNumber').length === 10) {
         this.dialNumber();
       }
     }
