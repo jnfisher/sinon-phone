@@ -1,0 +1,13 @@
+<h2 id="title">Terrible Phone</h2>
+
+{{currentNumber}}
+
+{{#each button-group in buttonGroups}}
+  <div>
+    {{#each button-id in button-group}}
+      <div class='button-group'>
+        {{button-with-id id=button-id sendId='receiveButtonPress'}}
+      </div>
+    {{/each}}
+  </div>
+{{/each}}
